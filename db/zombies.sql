@@ -21,7 +21,7 @@ CREATE TABLE zombies (
 
 CREATE TABLE bitings (
     id SERIAL PRIMARY KEY,
-    zombie_id SERIAL REFERENCES zombies(id),
-    human_id SERIAL REFERENCES humans(id)
+    zombie_id SERIAL REFERENCES zombies(id) ON DELETE CASCADE,
+    human_id SERIAL REFERENCES humans(id) ON DELETE CASCADE
 );
 -- why does this not require the INT infront of REFERENCES
